@@ -4,16 +4,17 @@ const HeroContent = () => {
   const TopSkills = [
     "Python",
     "JavaScript",
+    "React",
+    "Redux",
     "Data Structures",
     "Algorithms",
     "Java",
     "Django",
-    "DRF",
     "MySQL",
   ];
   return (
     <motion.section whileInView="visible" initial="hidden">
-      <div className="flex-1 md:flex-none text-left">
+      <div className="text-left">
         <motion.div
           variants={{
             hidden: { x: 0, opacity: 0, scale: 0 },
@@ -31,7 +32,9 @@ const HeroContent = () => {
           }}
         >
           <h1 className="text-lg sm:text-xl mb-2">Hello, I am</h1>
-          <h1 className="text-4xl sm:text-3xl md:text-5xl">Tarun Chawla</h1>
+          <h1 className="text-4xl sm:text-3xl md:text-5xl ">
+            Tarun <span className="text-teal-200">Chawla</span>
+          </h1>
         </motion.div>
         <div
           id="skills"

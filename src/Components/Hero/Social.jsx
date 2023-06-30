@@ -5,7 +5,7 @@ const Social = () => {
   return (
     <motion.div
       id="Social"
-      className="my-4 flex gap-4"
+      className="my-4 flex gap-4 items-center"
       whileInView="visible"
       initial="hidden"
       variants={{
@@ -23,19 +23,32 @@ const Social = () => {
         },
       }}
     >
-      <a href="https://github.com/Tarun193" target="_blank">
-        <span>
-          <VscGithub size={35} />
-        </span>
-      </a>
-      <a
-        href="https://www.linkedin.com/in/tarun-chawla-4986291ab/"
-        target="_blank"
-      >
-        <span>
-          <BsLinkedin size={35} />
-        </span>
-      </a>
+      <div className="flex gap-4">
+        <a href="https://github.com/Tarun193" target="_blank">
+          <span>
+            <VscGithub size={35} />
+          </span>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/tarun-chawla-4986291ab/"
+          target="_blank"
+        >
+          <span>
+            <BsLinkedin size={35} />
+          </span>
+        </a>
+      </div>
+      <div>
+        <button
+          type="button"
+          className="p-2 text-teal-200 border
+          border-teal-200"
+        >
+          <a download={true} href="./src/assets/resume.pdf">
+            Download Resume
+          </a>
+        </button>
+      </div>
     </motion.div>
   );
 };

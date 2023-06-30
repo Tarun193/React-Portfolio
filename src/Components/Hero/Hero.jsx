@@ -3,22 +3,11 @@ import ProgrammerAnimation from "../../assets/Animations/Programmer.json";
 import { motion, useAnimationControls, useInView } from "framer-motion";
 import HeroContent from "./HeroContent";
 const Hero = () => {
-  const TopSkills = [
-    "Python",
-    "JavaScript",
-    "Data Structures",
-    "Algorithms",
-    "JavaScript",
-    "Django",
-    "DRF",
-    "MySQL",
-  ];
-
   return (
     <>
       <motion.section
         id="Hero"
-        className="max-w-7xl m-auto flex flex-col-reverse text-center sm:text-left sm:flex-row items-center justify-between my-4 p-4 gap-8 sm:gap-0 overflow-hidden"
+        className="max-w-7xl min-h-[85vh] m-auto flex flex-col-reverse text-center sm:text-left sm:flex-row items-center justify-between my-4 p-4 gap-8 sm:gap-0 overflow-hidden"
         whileInView="visible"
         initial="hidden"
       >
@@ -29,7 +18,7 @@ const Hero = () => {
             visible: { x: 0, opacity: 100 },
           }}
           transition={{ duration: 0.5, delay: 0 }}
-          className="sm:flex-1 md:flex-none overflow-hidden"
+          className="overflow-hidden"
         >
           <Lottie animationData={ProgrammerAnimation}></Lottie>
         </motion.div>

@@ -8,6 +8,9 @@ export default {
         "Robot-mono": ["Roboto Mono", "monospace"],
         Electro: ["Electrolize", "sans-serif"],
       },
+      screens: {
+        xs: "440px",
+      },
     },
   },
   plugins: [],
