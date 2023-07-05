@@ -7,7 +7,7 @@ const Skills = () => {
   useEffect(() => {
     const db = getDatabase(app);
     const dataRefrence = ref(db, "/Skills");
-    const listner = onValue(dataRefrence, (snapshot) => {
+    onValue(dataRefrence, (snapshot) => {
       setSkills(snapshot.val());
     });
   }, []);

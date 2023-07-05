@@ -7,14 +7,12 @@ const Projects = () => {
   const [modelOpen, setModelOpen] = useState(false);
   const [projects, setProjects] = useState([]);
   useEffect(() => {
-    let projects = [];
     const db = getDatabase(App);
     const dataRefrence = ref(db, "/Projects");
-    const listner = onValue(dataRefrence, (snapshot) => {
+    onValue(dataRefrence, (snapshot) => {
       setProjects(snapshot.val());
     });
   }, []);
-  console.log(projects);
   return (
     <section className="max-w-7xl m-auto my-4 p-4">
       <h2 className="text-2xl font-bold text-center">Projects</h2>
