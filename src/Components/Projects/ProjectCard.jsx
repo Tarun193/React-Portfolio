@@ -1,12 +1,12 @@
 import { motion, spring } from "framer-motion";
 const ProjectCard = ({ project, setModelOpen, index }) => {
   return (
-    <motion.article className="w-full sm:w-[30%] space-y-3 border border-teal-300 p-3 rounded-xl shadow-sm shadow-teal-50 hover:cursor-pointer">
+    <article className="space-y-3 border border-teal-300 p-3 rounded-xl shadow-sm shadow-teal-50 hover:cursor-pointer">
       <div>
-        <img src={project?.image} alt="project 1 image" />
+        <img src={project?.image} alt="project image" />
       </div>
       <h3 className="font-bold text-2xl text-teal-200">{project?.title}</h3>
-      <p className="text-lg">{project?.description}</p>
+      <p className="text-lg min-h-[9rem]">{project?.description}</p>
       <motion.button
         whileHover={{
           backgroundColor: "rgb(153,246,228)",
@@ -23,7 +23,7 @@ const ProjectCard = ({ project, setModelOpen, index }) => {
       >
         More Info
       </motion.button>
-    </motion.article>
+    </article>
   );
 };
 

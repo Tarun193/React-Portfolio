@@ -7,6 +7,7 @@ const Projects = () => {
   const [modelOpen, setModelOpen] = useState(false);
   const [projects, setProjects] = useState([]);
   useEffect(() => {
+    let projects = [];
     const db = getDatabase(App);
     const dataRefrence = ref(db, "/Projects");
     const listner = onValue(dataRefrence, (snapshot) => {
@@ -17,9 +18,9 @@ const Projects = () => {
   return (
     <section className="max-w-7xl m-auto my-4 p-4">
       <h2 className="text-2xl font-bold text-center">Projects</h2>
-      <section className="flex my-4">
+      <section className="m-auto w-full my-4 gap-4 flex flex-wrap items-stretch justify-between">
         {projects.map((project, index) => (
-          <div key={index}>
+          <div key={index} className="md:w-[48%] lg:w-[32%]">
             <ProjectCard
               index={index}
               setModelOpen={setModelOpen}
