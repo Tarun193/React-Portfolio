@@ -33,7 +33,7 @@ const ProjectModel = ({ project, modelOpen, setModelOpen, index }) => {
               type: "tween",
             }}
             onClick={(e) => e.stopPropagation()}
-            className="flex flex-col xl:flex-row  gap-12 rounded-xl relative no-scrollbar z-50 w-[95%] sm:w-5/6 m-auto p-4 md:p-8 bg-gradient-to-b from-gray-900 to-gray-600 max-h-[500px] sm:max-h-[600px] overflow-y-scroll"
+            className="flex flex-col xl:flex-row  gap-12 rounded-xl relative no-scrollbar z-50 w-[95%] sm:w-5/6 m-auto p-4 md:p-8 bg-gradient-to-b from-gray-900 to-gray-600 max-h-[500px] sm:max-h-[600px]  overflow-y-scroll"
           >
             <button type="buttton" onClick={() => setModelOpen(null)}>
               <MdCancel size={26} className="absolute top-0 right-0" />

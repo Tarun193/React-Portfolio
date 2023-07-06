@@ -31,7 +31,7 @@ const Skills = () => {
                   opacity: 1,
                 },
               }}
-              transition={{ delay: 0.1 * index, duration: 0.2 }}
+              transition={{ delay: 0.05 * index, duration: 0.2 }}
               className="flex items-center gap-3 px-4 py-2 rounded-lg shadow shadow-teal-100 border border-teal-100 w-full xs:w-[45%] sm:w-[30%] md:w-[22%]"
             >
               <img src={skill.icon} width={50} alt="" />
