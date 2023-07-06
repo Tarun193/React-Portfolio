@@ -33,7 +33,11 @@ const ProjectCard = ({ project, setModelOpen, index }) => {
         }}
         className="p-2 text-teal-200 border
           border-teal-200"
-        onClick={() => setModelOpen(index)}
+        onClick={() => {
+          setModelOpen(index);
+          // Stoppind scrolling when modal is open
+          document.body.style.overflow = "hidden";
+        }}
       >
         More Info
       </motion.button>
