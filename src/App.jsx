@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <>
+    <div ref={homeRef} className="h-full">
       <Header
         homeRef={homeRef}
         skillRef={skillRef}
@@ -40,13 +40,13 @@ function App() {
         contactRef={contactRef}
         handleScroll={handleScroll}
       />
-      <Hero homeRef={homeRef} resume={staticFiles?.resume} />
+      <Hero resume={staticFiles?.resume} />
       <Skills skillRef={skillRef} />
       <Projects projectRef={projectRef} />
       <Experience expRef={expRef} />
       <Education eduRef={eduRef} />
       <Contact contactRef={contactRef} />
-    </>
+    </div>
   );
 }
 
