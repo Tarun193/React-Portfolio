@@ -109,7 +109,7 @@ const Header = ({
             <nav
               className={`px-4 ${
                 open ? "block" : "hidden"
-              } md:hidden opacity-100 absolute w-full top-0 left-0 z-30 bg-black/90`}
+              } md:hidden h-[100vh] opacity-100 absolute w-full top-0 left-0 z-30 bg-black/90`}
               aria-label="secandary"
             >
               <motion.ul
@@ -121,7 +121,7 @@ const Header = ({
                   delayChildren: 0.1,
                 }}
                 exit={{ scale: 0, opacity: 0 }}
-                className="text-2xl flex-col flex h-[100vh] items-center py-4 pt-12 relative"
+                className="text-2xl flex-col flex items-center py-4 pt-12 relative h-[90vh]"
               >
                 <button
                   className="absolute top-2 right-[-1rem]"
