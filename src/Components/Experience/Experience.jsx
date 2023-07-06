@@ -51,7 +51,7 @@ const Experience = ({ expRef }) => {
               </div>
             </div>
             <div className="flex-1 py-3 pl-2 sm:pl-8 border-t-teal-50 border-t sm:border-t-0 sm:border-teal-50 sm:border-l">
-              <ul className="list-disc ml-2 space-y-2 font-medium text-sm sm:text-md md:text-lg tracking-wide">
+              <ul className="list-disc ml-2 space-y-2 font-medium text-sm sm:text-lg tracking-wide">
                 {exp?.highlights?.map((highlight, index) => (
                   <li key={index}>{highlight}</li>
                 ))}

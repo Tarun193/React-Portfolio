@@ -5,7 +5,7 @@ const Contact = ({ contactRef }) => {
     <section
       ref={contactRef}
       id="contact"
-      className="max-w-7xl m-auto my-4 p-4"
+      className="max-w-7xl m-auto mt-4 mb-8 p-4"
     >
       <h1 className="text-xl sm:text-2xl font-bold text-center">
         Don't be a stranger! 👋

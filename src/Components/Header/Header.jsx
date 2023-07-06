@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion, AnimatePresence } from "framer-motion";
+import programmer from "../../assets/images/programmer.svg";
 const Header = ({
   skillRef,
   homeRef,
@@ -36,11 +37,7 @@ const Header = ({
       <section className="max-w-7xl m-auto p-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img
-              src="./assets/images/programmer.svg"
-              alt="progarmmer svg"
-              width={60}
-            />
+            <img src={programmer} alt="progarmmer svg" width={60} />
             <div className="text-lg sm:text-xl">
               <span className="block">Tarun</span>
               <span className="block text-teal-200">Chawla</span>
