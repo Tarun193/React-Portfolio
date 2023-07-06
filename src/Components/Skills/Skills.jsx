@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
 import app from "../../../firebase";
 
-const Skills = () => {
+const Skills = ({ skillRef }) => {
   useEffect(() => {
     const db = getDatabase(app);
     const dataRefrence = ref(db, "/Skills");
@@ -14,7 +14,7 @@ const Skills = () => {
 
   const [skills, setSkills] = useState([]);
   return (
-    <section className="max-w-7xl m-auto my-4 p-4">
+    <section ref={skillRef} className="max-w-7xl m-auto my-4 p-4">
       <h2 className="text-2xl font-bold text-center">Skills</h2>
       <section className="flex justify-center">
         <motion.div className="my-4 flex w-full m-auto gap-6 flex-wrap">

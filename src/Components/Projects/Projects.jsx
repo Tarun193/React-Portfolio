@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 import ProjectModel from "./ProjectModel";
 import { getDatabase, ref, onValue } from "firebase/database";
 import App from "../../../firebase";
-const Projects = () => {
+const Projects = ({ projectRef }) => {
   const [modelOpen, setModelOpen] = useState(false);
   const [projects, setProjects] = useState([]);
   useEffect(() => {
@@ -14,7 +14,7 @@ const Projects = () => {
     });
   }, []);
   return (
-    <section className="max-w-7xl m-auto my-4 p-4">
+    <section ref={projectRef} className="max-w-7xl m-auto my-4 p-4">
       <h2 className="text-2xl font-bold text-center">Projects</h2>
       <section className="m-auto w-full my-4 gap-4 flex flex-wrap items-stretch justify-between">
         {projects.map((project, index) => (

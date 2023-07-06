@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import App from "../../../firebase";
 import React from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
-const Experience = () => {
+const Experience = ({ expRef }) => {
   const [experience, setExperience] = useState([]);
 
   // Fetching data from friebase
@@ -16,7 +16,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section className="max-w-7xl m-auto my-4 p-4">
+    <section ref={expRef} className="max-w-7xl m-auto my-4 p-4">
       <h1 className="text-2xl font-bold text-center">Work Experience</h1>
       <section className="mb-4 mt-8">
         {experience.map((exp, index) => (
@@ -36,7 +36,7 @@ const Experience = () => {
                 <span>{exp?.startDate}</span> &#8208;{" "}
                 <span>{exp?.endDate}</span>
               </div>
-              <div className="text-black gap-2 flex flex-row flex-wrap text-sm sm:text-md pt-2 font-semibold w-full sm:w-1/2">
+              <div className="text-black gap-2 flex flex-row flex-wrap text-sm sm:text-md pt-2 font-semibold w-full lg:w-1/2">
                 {exp?.skills?.map((skill, index) => (
                   <motion.div
                     key={index}

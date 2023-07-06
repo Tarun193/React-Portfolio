@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Social from "./Social";
-const HeroContent = () => {
+const HeroContent = ({ resume }) => {
   const TopSkills = [
     "Python",
     "JavaScript",
@@ -61,7 +61,7 @@ const HeroContent = () => {
             </motion.span>
           ))}
         </div>
-        <Social />
+        <Social resume={resume} />
       </div>
     </motion.section>
   );

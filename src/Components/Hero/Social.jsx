@@ -1,7 +1,7 @@
 import { VscGithub } from "react-icons/vsc";
 import { BsLinkedin } from "react-icons/bs";
 import { motion } from "framer-motion";
-const Social = () => {
+const Social = ({ resume }) => {
   return (
     <motion.div
       id="Social"
@@ -44,7 +44,7 @@ const Social = () => {
           className="p-2 text-teal-200 border
           border-teal-200"
         >
-          <a download={true} href="./src/assets/resume.pdf">
+          <a target="_blank" href={resume}>
             Download Resume
           </a>
         </button>
