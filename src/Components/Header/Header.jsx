@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import programmer from "../../assets/images/programmer.svg";
 const Header = ({
   skillRef,
-  homeRef,
   projectRef,
   expRef,
   eduRef,
@@ -45,13 +44,8 @@ const Header = ({
           </div>
           <nav>
             <ul className=" gap-8 text-md hidden md:flex sm:text-lg">
-              <li
-                onClick={() => {
-                  handleScroll(homeRef);
-                }}
-                className="hover:text-teal-200 hover:cursor-pointer"
-              >
-                Home
+              <li className="hover:text-teal-200  hover:cursor-pointer">
+                <a href="https://blog.tarun-chawla.tech">Blog</a>
               </li>
               <li
                 onClick={() => {
@@ -129,14 +123,8 @@ const Header = ({
                 >
                   <AiOutlineClose className="text-teal-200" size={35} />
                 </button>
-                <li
-                  onClick={() => {
-                    setOpen(false);
-                    handleScroll(homeRef);
-                  }}
-                  className="hover:text-teal-200 flex-1  grid place-content-center"
-                >
-                  Home
+                <li className="hover:text-teal-200  hover:cursor-pointer">
+                  <a href="https://blog.tarun-chawla.tech">Blog</a>
                 </li>
                 <li
                   onClick={() => {

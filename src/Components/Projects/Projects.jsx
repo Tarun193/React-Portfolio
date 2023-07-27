@@ -10,7 +10,10 @@ const Projects = ({ projectRef }) => {
     const db = getDatabase(App);
     const dataRefrence = ref(db, "/Projects");
     onValue(dataRefrence, (snapshot) => {
-      setProjects(snapshot.val());
+      const sortedByOrderProjects = snapshot
+        .val()
+        .sort((p1, p2) => p1.order - p2.order);
+      setProjects(sortedByOrderProjects);
     });
   }, []);
   return (

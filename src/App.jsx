@@ -9,7 +9,6 @@ import { useRef, useState, useEffect } from "react";
 import app from "../firebase";
 import { getDatabase, ref, onValue } from "firebase/database";
 function App() {
-  const homeRef = useRef(null);
   const skillRef = useRef(null);
   const projectRef = useRef(null);
   const expRef = useRef(null);
@@ -30,9 +29,8 @@ function App() {
   };
 
   return (
-    <div ref={homeRef} className="h-full">
+    <div className="h-full">
       <Header
-        homeRef={homeRef}
         skillRef={skillRef}
         projectRef={projectRef}
         expRef={expRef}
