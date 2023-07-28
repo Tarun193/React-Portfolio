@@ -123,7 +123,7 @@ const Header = ({
                 >
                   <AiOutlineClose className="text-teal-200" size={35} />
                 </button>
-                <li className="hover:text-teal-200  hover:cursor-pointer">
+                <li className="hover:text-teal-200 flex-1  grid place-content-center">
                   <a href="https://blog.tarun-chawla.tech">Blog</a>
                 </li>
                 <li
