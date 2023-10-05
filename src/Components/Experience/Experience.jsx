@@ -11,7 +11,10 @@ const Experience = ({ expRef }) => {
     const db = getDatabase(App);
     const dataRefrence = ref(db, "/Experience");
     onValue(dataRefrence, (snapshot) => {
-      setExperience(snapshot.val());
+      const sortedByOrderExperience = snapshot
+        .val()
+        .sort((e1, e2) => e1.order - e2.order);
+      setExperience(sortedByOrderExperience);
     });
   }, []);
 
