@@ -19,7 +19,7 @@ const Projects = ({ projectRef }) => {
   return (
     <section ref={projectRef} className="max-w-7xl m-auto my-4 p-4">
       <h2 className="text-2xl font-bold text-center">Projects</h2>
-      <section className="m-auto w-full my-4 gap-4 flex flex-wrap items-stretch justify-between">
+      <section className="m-auto w-full my-4 gap-4 flex flex-wrap items-stretch justify-start">
         {projects.map((project, index) => (
           <div key={index} className="md:w-[48%] lg:w-[32%]">
             <ProjectCard

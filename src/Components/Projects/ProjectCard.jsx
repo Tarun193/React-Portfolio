@@ -11,7 +11,7 @@ const ProjectCard = ({ project, setModelOpen, index }) => {
           className="w-full"
         />
       </div>
-      <h3 className="font-bold text-2xl text-teal-200">{project?.title}</h3>
+      <h3 className="font-bold text-2xl text-teal-200 h-9">{project?.title}</h3>
       <p className="text-lg min-h-[9rem]">{project?.description}</p>
       <motion.button
         whileHover={{
