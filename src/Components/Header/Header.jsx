@@ -45,7 +45,7 @@ const Header = ({
           <nav>
             <ul className=" gap-8 text-md hidden md:flex sm:text-lg">
               <li className="hover:text-teal-200  hover:cursor-pointer">
-                <a href="https://blog.tarun-chawla.tech">Blog</a>
+                <a href="https://blog.tarunchawla.tech">Blog</a>
               </li>
               <li
                 onClick={() => {
@@ -124,7 +124,7 @@ const Header = ({
                   <AiOutlineClose className="text-teal-200" size={35} />
                 </button>
                 <li className="hover:text-teal-200 flex-1  grid place-content-center">
-                  <a href="https://blog.tarun-chawla.tech">Blog</a>
+                  <a href="https://blog.tarunchawla.tech">Blog</a>
                 </li>
                 <li
                   onClick={() => {
