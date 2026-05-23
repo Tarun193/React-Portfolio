@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   const handleScroll = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
+    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (

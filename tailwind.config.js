@@ -5,6 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        Inter: ["Inter", "sans-serif"],
         "press-start": ['"Press Start 2P"', "cursive"],
         "Robot-mono": ["Roboto Mono", "monospace"],
         Electro: ["Electrolize", "sans-serif"],

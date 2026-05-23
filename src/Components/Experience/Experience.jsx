@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import App from "../../../firebase";
-import React from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
+import { getExternalLink, handleExternalLink } from "../../utils/externalLinks";
+
 const Experience = ({ expRef }) => {
   const [experience, setExperience] = useState([]);
 
@@ -19,49 +20,69 @@ const Experience = ({ expRef }) => {
   }, []);
 
   return (
-    <section ref={expRef} className="max-w-7xl m-auto my-4 p-4">
-      <h1 className="text-2xl font-bold text-center">Work Experience</h1>
-      <section className="mb-4 mt-8">
-        {experience.map((exp, index) => (
-          <article className="flex py-4 flex-col sm:flex-row gap-4" key={index}>
-            <div className="space-y-2  flex-1">
-              <h1 className="text-2xl font-bold">
+    <section ref={expRef} className="max-w-7xl m-auto px-4 py-16">
+      <div className="mx-auto mb-10 max-w-3xl text-center">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-200">
+          Background
+        </p>
+        <h2 className="mt-2 text-3xl font-bold">Work Experience</h2>
+      </div>
+      <section className="space-y-5">
+        {experience?.map((exp, index) => {
+          const companyLink = getExternalLink(exp?.companyLink);
+
+          return (
+            <article
+              className="grid gap-6 rounded-lg border border-white/10 bg-white/[0.03] p-5 md:grid-cols-[0.85fr_1.15fr] md:p-6"
+              key={index}
+            >
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold leading-tight">
                 {exp?.position} at{" "}
-                <a
-                  href={exp?.companyLink}
-                  target="_blank"
-                  className="text-teal-200 hover:cursor-pointer hover:text-teal-100"
-                >
-                  {exp?.company}
-                </a>
-              </h1>
+                {companyLink ? (
+                  <a
+                    href={companyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(event) =>
+                      handleExternalLink(event, exp?.companyLink)
+                    }
+                    className="text-teal-200 hover:cursor-pointer hover:text-teal-100"
+                  >
+                    {exp?.company}
+                  </a>
+                ) : (
+                  <span className="text-teal-200">{exp?.company}</span>
+                )}
+              </h3>
               <div className="text-lg font-semibold text-teal-200">
                 <span>{exp?.startDate}</span> &#8208;{" "}
                 <span>{exp?.endDate}</span>
               </div>
-              <div className="text-black gap-2 flex flex-row flex-wrap text-sm sm:text-md pt-2 font-semibold w-full lg:w-1/2">
+              <div className="flex flex-row flex-wrap gap-2 pt-1 text-sm font-semibold">
                 {exp?.skills?.map((skill, index) => (
                   <motion.div
                     key={index}
-                    className="p-2 text-md bg-gradient-to-r from-green-300 to-purple-400 rounded-lg"
+                    className="rounded-full border border-white/10 bg-white/10 px-3 py-2 text-slate-100"
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.2 * index }}
+                    transition={{ duration: 0.2, delay: 0.06 * index }}
                   >
                     {skill}
                   </motion.div>
                 ))}
               </div>
             </div>
-            <div className="flex-1 py-3 pl-2 sm:pl-8 border-t-teal-50 border-t sm:border-t-0 sm:border-teal-50 sm:border-l">
-              <ul className="list-disc ml-2 space-y-2 font-medium text-md sm:text-lg tracking-wide">
+            <div className="border-t border-white/10 pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+              <ul className="ml-4 list-disc space-y-3 text-base leading-8 text-slate-200">
                 {exp?.highlights?.map((highlight, index) => (
                   <li key={index}>{highlight}</li>
                 ))}
               </ul>
             </div>
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </section>
     </section>
   );

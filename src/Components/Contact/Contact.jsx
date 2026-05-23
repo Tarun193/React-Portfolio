@@ -1,15 +1,26 @@
 import { motion, spring } from "framer-motion";
+import { handleExternalLink } from "../../utils/externalLinks";
 
 const Contact = ({ contactRef }) => {
+  const githubLink = "https://github.com/Tarun193/";
+  const linkedInLink = "https://www.linkedin.com/in/tarun-chawla-4986291ab/";
+  const emailLink = "mailto:tarunchawla.7463@gmail.com";
+
   return (
     <section
       ref={contactRef}
       id="contact"
-      className="max-w-7xl m-auto mt-4 mb-8 p-4"
+      className="max-w-7xl m-auto px-4 py-16"
     >
-      <h1 className="text-xl sm:text-2xl font-bold text-center">
-        Don't be a stranger! 👋
-      </h1>
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-200">
+          Contact
+        </p>
+        <h2 className="mt-2 text-3xl font-bold">Let&apos;s build something useful.</h2>
+        <p className="mt-3 text-slate-300">
+          Open to developer roles, collaboration, and project conversations.
+        </p>
+      </div>
       <motion.section
         initial={{ scale: 0, x: 20 }}
         whileInView={{
@@ -21,7 +32,7 @@ const Contact = ({ contactRef }) => {
             bounce: 0.3,
           },
         }}
-        className="mt-8 flex gap-4 justify-center"
+        className="mt-8 flex flex-wrap gap-4 justify-center"
       >
         <motion.a
           whileHover={{
@@ -42,10 +53,11 @@ const Contact = ({ contactRef }) => {
               type: spring,
             },
           }}
-          className="p-2 text-teal-200 border
-          border-teal-200"
-          href="https://github.com/Tarun193/"
+          className="rounded-md border border-teal-200/70 px-4 py-3 font-bold text-teal-100"
+          href={githubLink}
           target="_blank"
+          rel="noopener noreferrer"
+          onClick={(event) => handleExternalLink(event, githubLink)}
         >
           GitHub
         </motion.a>
@@ -68,10 +80,11 @@ const Contact = ({ contactRef }) => {
               type: spring,
             },
           }}
-          className="p-2 text-teal-200 border
-          border-teal-200"
-          href="https://www.linkedin.com/in/tarun-chawla-hex7463/"
+          className="rounded-md border border-teal-200/70 px-4 py-3 font-bold text-teal-100"
+          href={linkedInLink}
           target="_blank"
+          rel="noopener noreferrer"
+          onClick={(event) => handleExternalLink(event, linkedInLink)}
         >
           LinkedIn
         </motion.a>
@@ -95,9 +108,9 @@ const Contact = ({ contactRef }) => {
               type: spring,
             },
           }}
-          className="p-2 text-teal-200 border
-          border-teal-200"
-          href="mailto:tarunchawla.7463@gmail.com"
+          className="rounded-md border border-teal-200/70 px-4 py-3 font-bold text-teal-100"
+          href={emailLink}
+          onClick={(event) => handleExternalLink(event, emailLink)}
         >
           Email
         </motion.a>
